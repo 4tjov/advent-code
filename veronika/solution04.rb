@@ -1,7 +1,7 @@
 input = File.readlines('input04.txt', chomp: true)
 
 drawn_numbers = input.first.split(',').map(&:to_i)
-boards        = input[2..-1].each_slice(6).map { |s| s.reject(&:empty?).map { |l| l.split.map(&:to_i) } }
+boards        = input[2..-1].reject(&:empty?).each_slice(5).map { |slice| slice.map { |s| s.split.map(&:to_i) } }
 
 score = 0
 drawn_numbers.size.times.with_index do |i|
