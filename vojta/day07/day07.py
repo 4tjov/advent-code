@@ -8,6 +8,8 @@ with open("input07.txt") as f:
         for crab_pos in crabs_position:
             diff = abs(index - crab_pos)
             if diff != 0:
+                # part 1:
+                # position_fuel_expensis[index] += diff
                 position_fuel_expensis[index] += (1 + diff) * diff / 2
 
     print(min(position_fuel_expensis))
